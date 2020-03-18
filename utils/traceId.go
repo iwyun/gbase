@@ -34,8 +34,8 @@ func NewChildIdWithParentId(parentId string) string {
 	return fmt.Sprintf(childIdTemplate, parentId, rand.New(srcTraceId).Intn(randomRange))
 }
 
-func NewTraceIdWithKeys(key ...string) string {
-	return fmt.Sprintf(traceIdWithKeyTemplate, TraceId, strings.ToUpper(strings.Replace(uuid.NewV4().String(), "-", "", -1)), strings.Join(key, "_"))
+func NewTraceIdWithKeys(keys ...string) string {
+	return fmt.Sprintf(traceIdWithKeyTemplate, TraceId, strings.ToUpper(strings.Replace(uuid.NewV4().String(), "-", "", -1)), strings.Join(keys, "_"))
 }
 
 func GetTraceId(ctx context.Context) string {

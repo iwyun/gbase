@@ -6,8 +6,7 @@ import (
 )
 
 func InitDocs(mainPath string) {
-	//本地
-
+	//todo check os
 	err := exec.Command("swag", "init", "-g", mainPath+"/main.go", "-o", mainPath+"/docs").Run()
 	if err != nil {
 		log.Errorln(err)
